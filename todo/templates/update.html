@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Todo</title>
+</head>
+<body>
+    <h1>Todo 수정하기</h1>
+    <form action="/todo/update/{{todo.id}}" method="POST">
+        {%csrf_token%}
+        title : <input tuype="text" name="title" id="title" value="{{todo.title}}">
+        content : <input tuype="text" name="content" id="content" value="{{todo.content}}">
+        <button type=submit>저장</button>
+    </form>
+</body>
+</html>
