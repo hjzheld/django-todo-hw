@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Todo</title>
+</head>
+<body>
+    <h1>Todo 작성하기</h1>
+    <form action="/todo/create/" method="POST">
+        {%csrf_token%}
+        title : <input tuype="text" name="title" placeholder="제목을 입력해주세요">
+        content : <input tuype="text" name="content" placeholder="내용을 입력해주세요">
+        <button type=submit>저장</button>
+    </form>
+</body>
+</html>
