@@ -41,6 +41,7 @@
 </head>
 <body>
     <nav class="bg-red-100 text-slate-600 flex justify-center space-x-5">
+        <a href="/todo/" class="font-bold">Home</a> 
         {% if request.user.is_authenticated %}
         <div class="navbar-brand">{{request.user.username}}</div>
         <form action="/user/logout/" method="post">
@@ -48,11 +49,12 @@
             <button>로그아웃</button>
         </form>
         {% else %}
-        <div class="">
+        <div>
             <a href="/user/login/">로그인</a>
             <a href="/user/signup/">회원가입</a>
         </div>
-        {%endif%}    
+        {%endif%}
+           
     </nav>
     <div class="wrap">
     {% block content %}
