@@ -21,6 +21,7 @@ def read(request, todo_id):
         }
         return render(request, "detail.html", context)
 
+
 @login_required(login_url='/user/login/')
 @csrf_exempt    
 def create(request):
@@ -66,3 +67,15 @@ def update(request, todo_id):
         return HttpResponse("You are not allowed to delete this todo", status=403)
     
     
+@csrf_exempt
+def delete(request, todo_id):
+    if request.method == "POST":
+        todo = Todo.objects.get(id=todo_id)
+        if request.user == todo.user:
+           todo.delete()
+           return redirect("/todo/")
+        else:
+           return HttpResponse("You are not allowed to delete this todo", status=403)
+        
+    else:
+        return HttpResponse("Invalid request method", status=405)
