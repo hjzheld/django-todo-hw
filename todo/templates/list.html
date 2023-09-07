@@ -2,11 +2,15 @@
 {% block content %}
 <div>
     <p class="text-2xl">Todo List</p>
-    {% for todo in todos %}
-    <a href="/todo/{{todo.id}}">
-        <div><input type="checkbox" name="{{todo.title}}" value="{{todo.title}}">{{todo.title}}</div>
-    </a>
-    {% endfor %}
+    <ul>
+        {% for todo in todos %}
+        <a href="/todo/{{todo.id}}/">
+            <li class="p-2 border-b">
+                <div>{{todo.title}}</div>
+            </li>
+        </a>
+        {% endfor %}
+    </ul>
     <a href="/todo/mytodo/">
         <button class="buttons1">My Todo</button>
     </a>
