@@ -6,7 +6,7 @@
             {% for todo in todos_list %}
                 <a href="/todo/{{todo.id}}">
                     <li class="p-2 border-b">
-                        <div>{{todo.title}}</div>
+                    <div><input type="checkbox" name="is_complete[]" value="{{todo.title}}">{{todo.title}}</div>
                     </li>
                 </a>
             {% endfor %}
@@ -15,8 +15,5 @@
     </div>
     <a href="/todo/create/">
         <button class="buttons1">새로 만들기</button>
-    </a>
-    <a href="/todo/">
-        <button class="buttons1">Todo list 모음</button>
     </a>
 {% endblock %}

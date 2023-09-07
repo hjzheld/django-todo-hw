@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Todo 작성하기</h1>
+    <h1 class="text-2xl">Todo 작성하기</h1>
     <form action="/todo/create/" method="POST">
         {%csrf_token%}
         title : <input class="bg-slate-200 p-1 rounded-lg text-slate-600" tuype="text" name="title" placeholder="제목을 입력해주세요">
@@ -9,8 +9,5 @@
     </form>
     <a href="/todo/mytodo/">
         <button class="buttons1">My Todo</button>
-    </a>
-    <a href="/todo/">
-        <button class="buttons1">Todo list 모음</button>
     </a>
 {% endblock %}
