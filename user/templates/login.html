@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-</head>
-<body>
-    <h1>로그인</h1>
-    <form action="/user/signup/" method="POST">
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="text-2xl">로그인</h1>
+    <form action="/user/login/" method="POST">
         {% csrf_token %}
-        ID : <input type=text name="username" placeholder="아이디를 입력하세요">
-        PASSWORD : <input type=text name="password" placeholder="비밀번호를 입력하세요">
-        <button type=submit>로그인</button>
+        ID : <input  class="bg-slate-200 p-1 m-2 rounded-lg text-slate-600" type=text name="username" placeholder="아이디를 입력하세요">
+        PASSWORD : <input  class="bg-slate-200 p-1 m-2 rounded-lg text-slate-600" type=text name="password" placeholder="비밀번호를 입력하세요">
+        <button class="bg-slate-200 p-2 m-2 rounded-full text-slate-600" type=submit>로그인</button>
     </form>
-</body>
-</html>
+    <div  class="buttons1">
+    <a href="/user/signup/" method="GET">
+        회원가입 페이지로
+    </a>
+    </div>
+{% endblock %}
