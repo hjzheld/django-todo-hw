@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make Todo</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
     <h1>Todo 작성하기</h1>
     <form action="/todo/create/" method="POST">
         {%csrf_token%}
-        title : <input tuype="text" name="title" placeholder="제목을 입력해주세요">
-        content : <input tuype="text" name="content" placeholder="내용을 입력해주세요">
-        <button type=submit>저장</button>
+        title : <input class="bg-slate-200 p-1 rounded-lg text-slate-600" tuype="text" name="title" placeholder="제목을 입력해주세요">
+        content : <input class="bg-slate-200 p-1 rounded-lg text-slate-600" tuype="text" name="content" placeholder="내용을 입력해주세요">
+        <button class="bg-slate-200 p-1 rounded-full  text-slate-600" type=submit>저장</button>
     </form>
-</body>
-</html>
+    <a href="/todo/mytodo/">
+        <button class="buttons1">My Todo</button>
+    </a>
+    <a href="/todo/">
+        <button class="buttons1">Todo list 모음</button>
+    </a>
+{% endblock %}

@@ -1,27 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-</head>
-<body>
-    <h1>Todo List</h1>
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <p class="text-2xl">Todo List</p>
+    {% for todo in todos %}
+    <a href="/todo/{{todo.id}}">
+        <div><input type="checkbox" name="{{todo.title}}" value="{{todo.title}}">{{todo.title}}</div>
+    </a>
+    {% endfor %}
     <a href="/todo/mytodo/">
-        <button>My Todo</button>
+        <button class="buttons1">My Todo</button>
     </a>
     <a href="/todo/create/">
-        <button>새로 만들기</button>
+        <button class="buttons1">새로 만들기</button>
     </a>
-    <ul>
-        {% for todo in todos %}
-        <a href="/todo/{{todo.id}}">
-            <li class="p-2 border-b">
-                <div>{{todo.title}}</div>
-            </li>
-        </a>
-        {% endfor %}
-    </ul>
+</div>
+{% endblock %}
     
-</body>
-</html>
